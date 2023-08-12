@@ -1,37 +1,8 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-
-<script>
-	import PocketBase from 'pocketbase';
-
-	import { onMount } from 'svelte';
-
-	let records = [];
-
-	onMount(async () => {
-		const pb = new PocketBase('http://25.65.20.210:8090');
-		records = await pb.collection('posts').getFullList({
-			sort: '-created',
-		});
-		console.log(records);
-	});
-
-</script>
-
 <div class="grid h-64 place-items-center text-7xl hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:rotate-6">
 	Willkommen bei TECH🖥️HOWTO!
 </div>
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-10 text-center flex flex-col items-center">
-		{#each records as record}
-			<div class="card">
-				<!-- <header class="card-header">{record.title}</header> -->
-				<section class="p-4">{record.title}</section>
-				<!-- <section class="p-4">{@html record.post}</section> -->
-			</div>
-		{/each}
-	</div>
-</div>
 
 <style lang="postcss">
 	figure {
