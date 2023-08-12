@@ -15,20 +15,16 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Tech-Howto 🧑‍💻</strong>
+				<a href="/"><strong class="text-xl uppercase">Tech-Howto 🧑‍💻</strong></a>
 				<a
 					class="ml-4 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:rotate-6"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
+					href="/posts"
 				>
 					Beiträge
 				</a>
 				<a
 					class="ml-2 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:rotate-6"
 					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
 				>
 					Tools
 				</a>
