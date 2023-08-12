@@ -8,7 +8,7 @@
 	let records = [];
 
 	onMount(async () => {
-		const pb = new PocketBase('http://localhost:8090');
+		const pb = new PocketBase('http://25.65.20.210:8090');
 		records = await pb.collection('posts').getFullList({
 			sort: '-created',
 		});
@@ -17,8 +17,8 @@
 
 </script>
 
-<div class="grid h-56 place-items-center">
-	<h2 class="h2">Willkommen bei Tech-HowTo!</h2>
+<div class="grid h-64 place-items-center text-7xl hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:rotate-6">
+	Willkommen bei TECH🖥️HOWTO!
 </div>
 
 <div class="container h-full mx-auto flex justify-center items-center">
