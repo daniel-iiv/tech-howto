@@ -17,16 +17,22 @@
 			<svelte:fragment slot="lead">
 				<a href="/"><strong class="text-xl uppercase">Tech-Howto 🧑‍💻</strong></a>
 				<a
-					class="ml-4 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:rotate-6"
+					class="ml-4 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:variant-filled-primary"
 					href="/posts"
 				>
 					Beiträge
 				</a>
 				<a
-					class="ml-2 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:rotate-6"
+					class="ml-2 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:variant-filled-primary"
 					href="https://github.com/skeletonlabs/skeleton"
 				>
 					Tools
+				</a>
+				<a
+					class="ml-2 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:variant-filled-primary"
+					href="https://github.com/skeletonlabs/skeleton"
+				>
+					Buy me a coffee ☕
 				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
