@@ -1,5 +1,5 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-<div class="grid h-64 place-items-center text-7xl hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:rotate-6">
+<div class="grid h-64 place-items-center text-6xl transition-transform font-bold">
 	Willkommen bei TECH🖥️HOWTO!
 </div>
 
