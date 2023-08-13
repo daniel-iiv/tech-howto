@@ -4,22 +4,58 @@
 	import { onMount } from 'svelte';
 
 	let records = [];
+	let tags = [];
+	let tagNames = {};
 
 	onMount(async () => {
-		const pb = new PocketBase('http://localhost:8090');
+		const pb = new PocketBase('http://26.118.217.130:8090');
 		// const pb = new PocketBase('http://25.65.20.210:8090');
+		tags = await pb.collection('tags').getFullList();
+		console.log(tags);
+		
 		records = await pb.collection('posts').getFullList({
+			fields: 'id,title,description,created,tags',
 			sort: '-created',
+			// expand: 'tags'
 		});
+		// console.log(records);
+
+		// add a key value pair for each tag like {id: name}
+		tags.forEach(element => {
+			tagNames[element.id] = element.name;
+		});
+		console.log(tagNames);
+
 	});
+
+
+	function localDate(date) {
+		return new Date(date).toLocaleDateString();
+	}
 </script>
 
-<div class="grid grid-flow-col auto-rows-max">
+<div class="grid grid-flow-row w-full 2xl:w-9/12 mx-auto">
 	{#each records as record}
-		<div class="card m-4 shadow transition-transform hover:shadow-xl variant-glass variant-outline-primary">
-			<section class="p-4"><strong>{record.title}</strong></section>
-			<section class="p-4">{record.description}</section>
-			<header class="card-footer"><a class="btn btn-sm variant-ghost-primary hover:variant-filled-primary" href="/posts/{record.id}">öffnen</a></header>
+	<div class="card p-4 m-4 shadow transition-transform hover:shadow-xl variant-glass variant-outline-primary">
+		<div class="grid grid-cols-3 max-h-40">
+			<div class="container h-full w-full" style="max-width: 100%;max-height: 100%">
+				<img class="object-scale-down" src="https://placehold.co/600x400.png" alt="">
+			</div>
+			<div>
+				<section class="h2 ml-2"><strong>{record.title}</strong></section>
+				<section class="py-4 ml-2">{record.description}</section>
+				<!-- {#each record.expand.tags as tag}
+				<span class="badge variant-filled mx-auto">{tag.name}</span>
+				{/each} -->
+				{#each record.tags as tag}
+					<span class="badge variant-filled ml-2">{tagNames[tag]}</span>
+				{/each}
+			</div>
+			<div>
+				<section class="py-4 text-end">veröffentlicht am {localDate(record.created)}</section>
+				<a class="btn btn-sm variant-ghost-primary hover:variant-filled-primary" href="/posts/{record.id}">mehr</a>
+			</div>
 		</div>
+	</div>
 	{/each}
 </div>
