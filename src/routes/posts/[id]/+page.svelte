@@ -9,8 +9,7 @@
     let record = [];
 
 	onMount(async () => {
-		const pb = new PocketBase('http://26.118.217.130:8090');
-		// const pb = new PocketBase('http://25.65.20.210:8090');
+		const pb = new PocketBase('http://localhost:8090');
         record = await pb.collection('posts').getOne(data.id);
 		console.log(record);
 	});
