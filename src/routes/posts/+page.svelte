@@ -8,8 +8,7 @@
 	let tagNames = {};
 
 	onMount(async () => {
-		const pb = new PocketBase('http://26.118.217.130:8090');
-		// const pb = new PocketBase('http://25.65.20.210:8090');
+		const pb = new PocketBase('http://localhost:8090');
 		tags = await pb.collection('tags').getFullList();
 		console.log(tags);
 		
@@ -18,9 +17,7 @@
 			sort: '-created',
 			// expand: 'tags'
 		});
-		// console.log(records);
 
-		// add a key value pair for each tag like {id: name}
 		tags.forEach(element => {
 			tagNames[element.id] = element.name;
 		});
@@ -36,10 +33,10 @@
 
 <div class="grid grid-flow-row w-full 2xl:w-9/12 mx-auto">
 	{#each records as record}
-	<div class="card p-4 m-4 shadow transition-transform hover:shadow-xl variant-glass variant-outline-primary">
-		<div class="grid grid-cols-3 max-h-40">
+	<div class="card p-4 m-4 shadow transition-transform hover:shadow-xl variant-glass variant-outline-primary overflow-hidden">
+		<div class="grid grid-cols-3">
 			<div class="container h-full w-full" style="max-width: 100%;max-height: 100%">
-				<img class="object-scale-down" src="https://placehold.co/600x400.png" alt="">
+				<img class="object-contain h-full w-full" src="https://placehold.co/600x400.png" alt="">
 			</div>
 			<div>
 				<section class="h2 ml-2"><strong>{record.title}</strong></section>
