@@ -56,10 +56,9 @@
 					<span class="badge variant-filled ml-2">{tagNames[tag]}</span>
 				{/each}
 			</div>
-			<!-- <div>
+			<div>
 				<section class="py-4 text-end">veröffentlicht am {localDate(record.created)}</section>
-				<a class="btn btn-sm variant-ghost-primary hover:variant-filled-primary" href="/posts/{record.id}">mehr</a>
-			</div> -->
+			</div>
 		</div>
 	</div>
 	{/each}
