@@ -28,12 +28,6 @@
 				>
 					Tools
 				</a>
-				<a
-					class="ml-2 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:variant-filled-primary"
-					href="https://github.com/skeletonlabs/skeleton"
-				>
-					Buy me a coffee ☕
-				</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<!-- <a
@@ -44,6 +38,18 @@
 				>
 					GitHub
 				</a> -->
+				<a
+				class="ml-2 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:variant-filled-primary"
+				href="https://github.com/skeletonlabs/skeleton"
+				>
+				Suche
+				</a>
+				<a
+				class="ml-2 btn btn-sm variant-ghost-surface hover:bg-violet-400 transition-transform hover:scale-110 hover:shadow-lg hover:variant-filled-primary"
+				href="https://github.com/skeletonlabs/skeleton"
+				>
+				Buy me a coffee ☕
+				</a>
 				<LightSwitch />
 			</svelte:fragment>
 		</AppBar>
